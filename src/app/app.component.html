@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="select-area">
+    <input type="file" (change)="onSelectFile($event)" />
+  </div>
+
+  <form [formGroup]="formGroup">
+    <div>
+      <label for="chave">Chave da Nota</label>
+      <input
+        type="text"
+        id="chave"
+        formControlName="chave"
+        placeholder="Digite a chave da nota"
+      />
+    </div>
+
+    <div>
+      <label for="numeroNfe">Nº da Nota</label>
+      <input
+        type="text"
+        id="numeroNfe"
+        formControlName="numeroNfe"
+        placeholder="Número da nota"
+      />
+    </div>
+
+    <div>
+      <label for="dataEmissao">Data Emissão</label>
+      <input
+        type="datetime"
+        id="dataEmissao"
+        formControlName="dataEmissao"
+        placeholder="Data de Emissão"
+      />
+    </div>
+
+    <div>
+      <label for="valorProdutos">Valor dos Produtos</label>
+      <input
+        type="text"
+        id="valorProdutos"
+        formControlName="valorProdutos"
+        placeholder="Digite o valor dos produtos"
+      />
+    </div>
+
+    <div>
+      <label for="valorTotal">Valor Total</label>
+      <input
+        type="text"
+        id="valorTotal"
+        formControlName="valorTotal"
+        placeholder="Digite o valor da nota"
+      />
+    </div>
+
+    <button type="button" (click)="onSave()">Gerar XML</button>
+  </form>
+  <hr />
+  <div class="xml-area">
+    {{ outputXml }}
+  </div>
+</div>
